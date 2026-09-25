@@ -1,5 +1,5 @@
 {
-  "version": "2.3.6",
+  "version": "2.3.8",
   "url": "https://github.com/collab-exe/lead-copier-updates/releases/latest",
-  "notes": "Latest Lead Copier update"
+  "notes": "Fix question mark message detection"
 }
