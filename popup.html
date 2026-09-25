@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body { width: 360px; margin:0; font-family: sans-serif; background:#f8f9ff; color:#222; }
+.header { background: linear-gradient(135deg,#667eea,#764ba2); color:white; padding:18px; text-align:center; }
+.content { padding:16px; }
+.card { background:white; border-radius:10px; padding:14px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+button { width:100%; padding:11px; border:none; border-radius:8px; font-weight:700; cursor:pointer; margin-top:8px; }
+.btn-primary { background: linear-gradient(135deg,#667eea,#764ba2); color:white; }
+.btn-secondary { background:#f1f2ff; color:#667eea; border:1px solid #d0d4ff; }
+.status { font-size:12px; padding:8px; border-radius:6px; margin-top:8px; display:none; white-space:pre-wrap; }
+.status.show { display:block; }
+.success { background:#e8fff0; color:#0a7a3c; }
+.error { background:#ffe8e8; color:#c53030; }
+</style>
+</head>
+<body>
+<div class="header"><h3 style="margin:0;">Lead Copier V2</h3><p style="margin:4px 0 0;font-size:11px;">Exports the active lead conversation newest → oldest by default</p></div>
+<div class="content">
+<div class="card">
+<h4 style="margin:0 0 8px;">Task Form</h4>
+<p style="font-size:12px; line-height:1.5; margin:0; color:#555;">Press <b>Ctrl + Shift + S</b> on the Smarter Contact page to open the task form.</p>
+<button id="copyNow" class="btn-primary">Copy Lead Conversation</button>
+<button id="previewNow" class="btn-secondary">Preview</button>
+<div id="status" class="status"></div>
+</div>
+<div class="card">
+<h4 style="margin:0 0 8px;">Export format</h4>
+<p style="font-size:11px; line-height:1.5; color:#555; margin:0;">Messages are exported from oldest to newest. Extra platform metadata, the SMS counter, Send row, and export footer are excluded.</p>
+</div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

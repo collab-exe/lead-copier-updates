@@ -1,0 +1,137 @@
+#lead-copier-task-form {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#lead-copier-task-form.open { display: block; }
+
+.lc-task-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+}
+
+.lc-task-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(440px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 70px rgba(0,0,0,.28);
+  overflow: hidden;
+}
+
+.lc-task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.lc-task-title { font-size: 17px; font-weight: 800; }
+.lc-task-subtitle { margin-top: 3px; font-size: 12px; opacity: .9; }
+
+.lc-task-close {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lc-task-body { padding: 20px; }
+.lc-task-label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; color: #555; }
+
+.lc-task-select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #d7d9e2;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  color: #222;
+}
+
+.lc-task-run {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lc-task-status {
+  display: none;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.lc-task-status.success { display: block; background: #e8fff0; color: #0a7a3c; }
+.lc-task-status.error { display: block; background: #ffe8e8; color: #c53030; }
+.lc-task-status.preview { display: block; background: #f7f7fb; color: #222; border: 1px solid #e5e5ee; }
+.lc-task-hint { margin-top: 10px; text-align: center; color: #888; font-size: 11px; }
+
+
+.lc-task-reverse {
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 12px;
+  border: 1px solid #d7d9e2;
+  border-radius: 8px;
+  background: #f7f7fb;
+  color: #4f46a5;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lc-task-reverse:hover { background: #eeeeff; }
+.lc-task-reverse[aria-pressed="true"] { background: #e8e7ff; border-color: #aaa5ff; }
+
+
+/* Direct-copy confirmation animation (Ctrl + Shift + S) */
+#lead-copier-copy-animation {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  z-index: 2147483647;
+  transform: translate(-50%, -14px) scale(.96);
+  opacity: 0;
+  pointer-events: none;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #fff;
+  font: 700 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  transition: opacity .2s ease, transform .2s ease;
+}
+#lead-copier-copy-animation.show {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+#lead-copier-copy-animation.error { background: #dc2626; }

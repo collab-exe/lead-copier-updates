@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Lead Chat Copier V2",
+  "version": "2.3.8",
+  "description": "Lead Copier with reliable conversation extraction, lead name/phone, message times, and oldest-to-newest copy.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.smartercontact.com/*",
+    "https://*.smarter-contact.com/*",
+    "https://app.launchcontrol.us/*",
+    "https://*.launchcontrol.us/*",
+    "https://hooks.slack.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Lead Chat Copier V2",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.smartercontact.com/*",
+        "https://*.smarter-contact.com/*",
+        "https://app.launchcontrol.us/*",
+        "https://*.launchcontrol.us/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "commands": {
+    "open-task-form": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "MacCtrl+Shift+S"
+      },
+      "description": "Copy the active lead conversation"
+    }
+  }
+}
